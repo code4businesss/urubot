@@ -85,7 +85,6 @@ st.title("🤖 SwitchGPT personalizado con origen de datos pdf 🧠 ")
 st.markdown(
     """ 
         ####  🗨️ Prueba para hablar con archivos PDF con `Conversational Buffer Memory`  
-        > *powered by [code4business]('https://code4business.com') *
         ----
         """
 )
@@ -112,7 +111,7 @@ if uploaded_file:
                 label="Seleccionar Pagina", min_value=1, max_value=len(pages), step=1
             )
             pages[page_sel - 1]
-        api = "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"
+        api = st.secrets["OPENAI_API_KEY"]
         if api:
             # embeddings = OpenAIEmbeddings(openai_api_key=api)
             # # Indexing
